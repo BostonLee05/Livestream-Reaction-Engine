@@ -1,0 +1,188 @@
+/* Apply predictable sizing to every element. */
+* {
+    box-sizing: border-box;
+}
+
+/* Basic page appearance. */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #171923;
+    color: white;
+}
+
+/* Arrange the header, reaction stage and controls vertically. */
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Page heading. */
+header {
+    text-align: center;
+    padding: 12px;
+}
+
+header h1 {
+    margin: 0 0 8px;
+}
+
+header p {
+    margin: 0;
+    color: #b8bdca;
+}
+
+/* The area where floating reactions appear. */
+.reaction-stage {
+    position: relative;
+    flex: 1;
+    min-height: 350px;
+    margin: 18px 0;
+    background-color: #252b3b;
+    border: 1px solid #3b4358;
+    border-radius: 14px;
+
+    /* Hide reactions after they move outside this area. */
+    overflow: hidden;
+}
+
+/* Message shown before the first reaction is sent. */
+.stage-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #9299aa;
+    pointer-events: none;
+}
+
+/* Place the controls in one horizontal row. */
+.control-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 12px;
+}
+
+/* Arrange the four emoji buttons horizontally. */
+.reaction-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* General button appearance. */
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Highlight the currently selected emoji. */
+.reaction-choice {
+    background-color: #343b50;
+    border: 2px solid transparent;
+}
+
+.reaction-choice.selected {
+    border-color: #8192ff;
+    background-color: #414b70;
+}
+
+/* Small visual effect when the mouse is over a button. */
+button:hover {
+    filter: brightness(1.15);
+}
+
+/* The main Send Reaction button. */
+.send-button {
+    background-color: #5268e8;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/*
+   Each reaction gets this class when JavaScript creates it.
+   The animation uses bottom, left and font-size deliberately.
+*/
+.floating-reaction {
+    position: absolute;
+    bottom: 0;
+    left: var(--start-x);
+
+    font-size: 28px;
+    line-height: 1;
+    pointer-events: none;
+
+    animation: floatUp 3s ease-out forwards;
+}
+
+/* Phase 1 animation: these are layout/geometry properties. */
+@keyframes floatUp {
+    0% {
+        bottom: 0;
+        left: var(--start-x);
+        font-size: 28px;
+        opacity: 1;
+    }
+
+    25% {
+        bottom: 25%;
+        left: calc(var(--start-x) + var(--drift));
+        font-size: 33px;
+        opacity: 1;
+    }
+
+    50% {
+        bottom: 50%;
+        left: calc(var(--start-x) - var(--drift));
+        font-size: 38px;
+        opacity: 1;
+    }
+
+    75% {
+        bottom: 75%;
+        left: calc(var(--start-x) + var(--drift));
+        font-size: 36px;
+        opacity: 0.6;
+    }
+
+    85% {
+        bottom: 85%;
+        left: var(--start-x);
+        font-size: 34px;
+        opacity: 0;
+    }
+
+    100% {
+        bottom: 100%;
+        left: var(--start-x);
+        font-size: 34px;
+        opacity: 0;
+    }
+}
+
+/* Make the controls fit smaller screens too. */
+@media (max-width: 520px) {
+    .app-container {
+        padding: 12px;
+    }
+
+    .control-bar {
+        gap: 10px;
+    }
+
+    button {
+        padding: 10px 12px;
+    }
+
+    .send-button {
+        font-size: 14px;
+    }
+}
