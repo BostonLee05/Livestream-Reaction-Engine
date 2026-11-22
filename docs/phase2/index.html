@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livestream Reaction Engine - Phase 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Livestream Reaction Engine - Phase 2</h1>
+            <p>GSAP with composited transforms</p>
+        </header>
+
+        <main class="reaction-stage" id="reactionStage">
+            <div class="stage-message" id="stageMessage">
+                Your reactions will appear here
+            </div>
+        </main>
+
+        <section class="control-bar">
+            <div class="reaction-buttons" aria-label="Choose a reaction">
+                <button class="reaction-choice selected" data-emoji="❤️" aria-label="Heart" aria-pressed="true">❤️</button>
+                <button class="reaction-choice" data-emoji="👍" aria-label="Like" aria-pressed="false">👍</button>
+                <button class="reaction-choice" data-emoji="🔥" aria-label="Fire" aria-pressed="false">🔥</button>
+                <button class="reaction-choice" data-emoji="⭐" aria-label="Star" aria-pressed="false">⭐</button>
+            </div>
+            <button class="send-button" id="sendButton">Send Reaction</button>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

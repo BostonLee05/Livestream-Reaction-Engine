@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #171923;
+    color: white;
+}
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 12px;
+}
+
+header h1 {
+    margin: 0 0 8px;
+}
+
+header p {
+    margin: 0;
+    color: #b8bdca;
+}
+
+.reaction-stage {
+    position: relative;
+    flex: 1;
+    min-height: 350px;
+    margin: 18px 0;
+    background-color: #252b3b;
+    border: 1px solid #3b4358;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.stage-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #9299aa;
+    pointer-events: none;
+}
+
+.control-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 12px;
+}
+
+.reaction-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.reaction-choice {
+    background-color: #343b50;
+    border: 2px solid transparent;
+}
+
+.reaction-choice.selected {
+    border-color: #8192ff;
+    background-color: #414b70;
+}
+
+button:hover {
+    filter: brightness(1.15);
+}
+
+.send-button {
+    background-color: #5268e8;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.floating-reaction {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 28px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+@media (max-width: 520px) {
+    .app-container {
+        padding: 12px;
+    }
+
+    .control-bar {
+        gap: 10px;
+    }
+
+    button {
+        padding: 10px 12px;
+    }
+
+    .send-button {
+        font-size: 14px;
+    }
+}

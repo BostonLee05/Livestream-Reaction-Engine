@@ -3,38 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livestream Reaction Engine - Phase 1</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Livestream Reaction Engine</title>
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            font-family: Arial, sans-serif;
+            background: #171923;
+            color: white;
+        }
+        main {
+            text-align: center;
+        }
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 14px 20px;
+            border-radius: 10px;
+            background: #5268e8;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-
-    <div class="app-container">
-
-        <header>
-            <h1>Livestream Reaction Engine</h1>
-            <p>Choose a reaction, then send it to the livestream.</p>
-        </header>
-
-        <!-- Floating reactions will be created inside this area. -->
-        <main class="reaction-stage" id="reactionStage">
-            <div class="stage-message" id="stageMessage">
-                Your reactions will appear here
-            </div>
-        </main>
-
-        <section class="control-bar">
-            <div class="reaction-buttons" aria-label="Choose a reaction">
-                <button class="reaction-choice selected" data-emoji="❤️" aria-label="Heart" aria-pressed="true">❤️</button>
-                <button class="reaction-choice" data-emoji="👍" aria-label="Like" aria-pressed="false">👍</button>
-                <button class="reaction-choice" data-emoji="🔥" aria-label="Fire" aria-pressed="false">🔥</button>
-                <button class="reaction-choice" data-emoji="⭐" aria-label="Star" aria-pressed="false">⭐</button>
-            </div>
-
-            <button class="send-button" id="sendButton">Send Reaction</button>
-        </section>
-
-    </div>
-
-    <script src="script.js"></script>
+    <main>
+        <h1>Livestream Reaction Engine</h1>
+        <p>Choose a phase to compare the animations.</p>
+        <a href="phase1/">Phase 1 - CSS</a>
+        <a href="phase2/">Phase 2 - GSAP</a>
+    </main>
 </body>
 </html>
