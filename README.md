@@ -7,7 +7,7 @@ python -m http.server 8000 --directory docs
 ```
 
 Open:
-
+* `http://localhost:8000/`
 * `http://localhost:8000/phase1/`
 * `http://localhost:8000/phase2/`
 
